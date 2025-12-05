@@ -1,6 +1,6 @@
 import css from "./MovieGrid.module.css";
 import type { Movie } from "../../types/movie";
-import fallbackImage from "../../../public/cinema.webp";
+import fallbackImage from "../../cinema.webp";
 interface MovieGridProps {
   movies: Movie[];
   onSelect: (movie: Movie) => void;
