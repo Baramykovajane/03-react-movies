@@ -1,6 +1,6 @@
 import css from "./MovieGrid.module.css";
 import type { Movie } from "../../types/movie";
-
+import fallbackImage from "../../../public/cinema.webp";
 interface MovieGridProps {
   movies: Movie[];
   onSelect: (movie: Movie) => void;
@@ -14,7 +14,7 @@ export default function MovieGrid({ movies, onSelect }: MovieGridProps) {
       {movies.map((movie) => {
         const imageUrl = movie.poster_path
           ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-          : "/public/cinema.webp"; 
+          : fallbackImage; 
 
         return (
           <li key={movie.id}>

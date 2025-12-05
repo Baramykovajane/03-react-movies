@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import css from "./MovieModal.module.css";
 import type { Movie } from "../../types/movie";
+import fallbackImage from "../../../public/cinema.webp";
+
 
 interface MovieModalProps {
   
@@ -43,7 +45,7 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
     ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
     : movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "/public/cinema.webp";
+    : fallbackImage;
 
 
   return createPortal(
